@@ -1,0 +1,29 @@
+<div class="d-flex">
+    <div class="sidebar-container bg-dark">
+        <div>
+            <h2 class="navbar-brand cg-title text-center">&nbsp;Usuarios</h2>
+        </div>
+        <div class="menu">
+            <ul class="personas">
+                <li *ngFor="let persona of personas" class="cg-body d-block p-3 side-lista" (click)="onSelect(persona)">
+                <span>{{persona.nombre}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <p><button class="btn btn-outline-dark btn-lg cg-body-hidden" *ngIf="selectedPersona" (click)="dataShow()">{{estado}}</button></p>
+    <div class="w-100" *ngIf="mostrar">
+        <div class="container" *ngIf="selectedPersona">
+            <ul >
+                <li class="datos">
+                    <p><b>ID:</b> {{selectedPersona.id}}</p>
+                    <p><b>Nombre:</b> {{selectedPersona.nombre}}</p>
+                    <p><b>Apellidos:</b> {{selectedPersona.apellidos}}</p>
+                    <p><b>Edad:</b> {{selectedPersona.edad}}</p>
+                    <p><b>Contacto:</b> {{selectedPersona.contacto}}</p>
+                    <p><b>Ocupación:</b> {{selectedPersona.ocupacion}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

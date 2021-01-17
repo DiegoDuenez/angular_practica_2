@@ -1,0 +1,57 @@
+.button{
+	margin: auto;
+}
+.datos{
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 400px;
+	margin: auto;
+    padding: 20px;
+    font-size: 140%;
+   
+}
+.nav-red{
+
+	background-color: #dd2e2e;
+}
+.nav-red-mid{
+	background-color: #b41515;
+}
+.cg-title{
+	font-family: "Century Gothic", CenturyGothic;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 30px;
+}
+.cg-body{
+	font-family: "Century Gothic", CenturyGothic;
+	color: #ffffff;
+	font-size: 18px;
+	
+}
+.cg-body-hidden{
+	font-family: "Century Gothic", CenturyGothic;
+	font-size: 18px;
+	margin-left: 10px;
+	margin-top: 10px;
+	
+	
+	
+}
+.sidebar-container{
+	min-height: 100vh;
+}
+.sidebar-container .logo{
+	padding: .875rem 1.25rem;
+}
+.sidebar-container .menu{
+	width: 18rem;
+}
+.side-lista:hover{
+
+	text-decoration: none;
+    color: red;  
+
+}
+
+
