@@ -5,13 +5,15 @@
         </div>
         <div class="menu">
             <ul class="personas">
+                <span  class="cg-body d-block p-3 side-lista" data-toggle="modal" data-target="#exampleModal">(Crear usuario)</span>
                 <li *ngFor="let persona of personas" class="cg-body d-block p-3 side-lista" (click)="onSelect(persona)">
                 <span>{{persona.nombre}}</span>
+                
                 </li>
             </ul>
         </div>
     </div>
-    <p><button class="btn btn-outline-dark btn-lg cg-body-hidden" *ngIf="selectedPersona" (click)="dataShow()">{{estado}}</button></p>
+    <p><button class="btn btn-outline-dark btn-lg cg-body-hidden" *ngIf="selectedPersona" (click)="dataShow()">{{estado}}</button></p><br>
     <div class="w-100" *ngIf="mostrar">
         <div class="container" *ngIf="selectedPersona">
             <ul >
@@ -25,5 +27,55 @@
                 </li>
             </ul>
         </div>
+    </div>
+
+   
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bienvenido {{ name }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="validationDefault05">ID</label>
+                        <input type="number" class="form-control" #ident required >
+                    </div>
+                  <div class="col-md-3 mb-3">
+                    <label for="validationDefault01">Nombre</label>
+                    <input type="text"  class="form-control" [(ngModel)]="name" #nomb name="something" required >
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="validationDefault02">Apellidos</label>
+                    <input type="text" class="form-control" #ap required >
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3 mb-3">
+                    <label for="validationDefault03">Edad</label>
+                    <input type="text" class="form-control" #edad required>
+                  </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="validationDefault03">Contacto</label>
+                        <input type="text" class="form-control" #cont required >
+                    </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="validationDefault05">Ocupacion</label>
+                    <input type="text" class="form-control" #ocup required >
+                  </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="agregarUsuario(ident.value, nomb.value, ap.value, edad.value, cont.value, ocup.value)">Agregar</button>
+        </div>
+      </div>
     </div>
 </div>

@@ -12,6 +12,8 @@ export class PersonasComponentComponent implements OnInit {
   selectedPersona!: Persona;
   mostrar:Boolean = true;
   estado: String = "Ocultar";
+  name: String = "";
+
 
   
   constructor() { }
@@ -29,15 +31,36 @@ export class PersonasComponentComponent implements OnInit {
       
       this.estado = "Mostrar";
       this.mostrar = false;
+
       
     }else{
       
       this.estado = "Ocultar";
       this.mostrar = true;
+
+      
   
     }
     
   }
+
+  /*agregarUsuario(id: number, nombre: String, apellidos: String, edad: number, contacto: number, ocupacion: String){
+
+    console.log(id, nombre, apellidos, edad, contacto, ocupacion)
+    this.personas.push(new Persona(id, nombre, apellidos, edad, ocupacion, contacto));
+    
+
+  }*/
+
+  agregarUsuario(id: number, nombre: string, ap: string, edad: number, contacto: number, ocupacion:string){
+    this.personas.push(new Persona(id,nombre, ap, edad, ocupacion, contacto));
+    console.log(PERSONAS)
+  }
+
+
+  
+
+  
 
 
 
